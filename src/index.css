@@ -24,6 +24,7 @@ code {
   --green-lighter: rgb(127, 207, 133);
   --white: white;
   --font-color: black;
+  --light-gray: #E7E7E7;
   --input-border-color: rgb(219, 215, 215);
   --input-border-active-color: rgb(127, 207, 133);
   --primary-button: #588a4d;
