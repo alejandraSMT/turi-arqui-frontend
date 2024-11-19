@@ -1,0 +1,13 @@
+.search-container {
+    width: 100%;
+    height: auto;
+    padding-block: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-swiper {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+  }

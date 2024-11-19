@@ -1,0 +1,20 @@
+{
+    "options": [
+        {
+            "name": "RESTAURANTES",
+            "href": "/"
+        },
+        {
+            "name": "LUGARES",
+            "href": "/"
+        },
+        {
+            "name": "ACTIVIDADES",
+            "href": "/"
+        },
+        {
+            "name": "BLOG",
+            "href": "/"
+        }
+    ]
+}
