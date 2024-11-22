@@ -14,7 +14,7 @@ function SearchBarList(props) {
     });
 
     let list;
-    if(props.input != '' && filteredData.length > 0){
+    if(props.input !== '' && filteredData.length > 0){
         list = <div className="search-list">
             <ul>
                     {filteredData.map((item) => (

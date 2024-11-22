@@ -5,6 +5,10 @@
     top: 28%;
     border: solid 1px var(--light-gray);
     border-radius: 10px;
+    @media (max-width: 1200px){
+        width: 80%;
+        top: 24%;
+    }
 }
 
 .searchbar .search-list ul {

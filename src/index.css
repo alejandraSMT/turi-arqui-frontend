@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   height: 100vh;
   margin: 0;
@@ -17,6 +21,26 @@ code {
 #root{
   height: 100vh;
   width: 100%;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 :root {
@@ -47,8 +71,43 @@ button.primary-button:hover{
   color: var(--white);
 }
 
+button.secondary-button{
+  border: 0px;
+  background-color: var(--white);
+  border-radius: 50px;
+  border: solid 1px var(--primary-button);
+  padding: 10px 20px;
+  color: var(--primary-button);
+  font-size: 15px;
+}
+
+button.secondary-button:hover{
+  cursor: pointer;
+  background-color: var(--primary-button-hover);
+  color: var(--white);
+}
+
+
 a.green{
   text-decoration: underline;
   color: var(--green);
   cursor: pointer;
+}
+
+input {
+  border-radius: 20px;
+  border: solid 1px var(--light-gray);
+  padding-inline: 15px;
+  padding-block: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+textarea {
+  border-radius: 20px;
+  border: solid 1px var(--light-gray);
+  padding-inline: 15px;
+  padding-block: 10px;
+  font-size: 15px;
+  outline: none;
 }

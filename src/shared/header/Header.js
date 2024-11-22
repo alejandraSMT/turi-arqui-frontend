@@ -4,6 +4,7 @@ let logo = require("../../assets/images/logo-turi-black.png")
 let headerOption = require("../../assets/json/header.json");
 let itinerary = require("../../assets/icons/itinerary-icon.svg");
 let favorites = require("../../assets/icons/favorites.svg");
+let sideMenu = require("../../assets/icons/side-menu.svg");
 
 function Header() {
 
@@ -17,15 +18,42 @@ function Header() {
             </a>);
     });
 
+    let sideBarOptions = [];
+    headerOption.options.forEach((element) => {
+        sideBarOptions.push(
+            <a href={element.href}>{element.name.charAt(0).toUpperCase() + element.name.slice(1).toLowerCase()}</a>
+        )
+    })
+
     return (
-        <div className="header">
-            <img className="logo" src={logo}/>
-            <div class="header-options">
-                {options}
+        <>
+            <div className="header">
+                <a className="logo" href="/"><img src={logo}/></a>
+                <div class="header-options">
+                    {options}
+                </div>
+                <div className="avatar-container">
+                    <a className="other-option"><img className="icon" src={favorites.default}/>Favoritos</a>
+                    <a className="other-option"><img className="icon" src={itinerary.default}/>Itinerario</a>
+                    <div className="avatar">
+                        <div class="dropdown-content">
+                            <a href="/">Mi perfil</a>
+                            <a href="/">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="avatar-container">
-                <a className="other-option"><img className="icon" src={favorites.default}/>Favoritos</a>
-                <a className="other-option"><img className="icon" src={itinerary.default}/>Itinerario</a>
+            <div className="header-mobile">
+                <div className="header-mobile__side">
+                    <div class="side-bar">
+                        <img className="side" src={sideMenu.default}/>
+                        <div class="side-dropdown">
+                            {sideBarOptions}
+                        </div>
+                    </div>
+                    
+                </div>
+                <a className="logo" href="/"><img src={logo}/></a>
                 <div className="avatar">
                     <div class="dropdown-content">
                         <a href="/">Mi perfil</a>
@@ -33,7 +61,7 @@ function Header() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
