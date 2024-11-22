@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Reviews from "../reviews/Reviews";
 
 function HomeScreen() {
 
@@ -21,7 +22,7 @@ function HomeScreen() {
     };
 
     return ( 
-        <>
+        <div className="home-container">
             <Header />
             <div className="search-container">
                 <SearchBar 
@@ -29,21 +30,8 @@ function HomeScreen() {
                     input={inputText}
                     searchValues={searchValues} />
             </div>
-            <Swiper
-                modules={[Navigation, Pagination]}
-                spaceBetween={50}
-                slidesPerView={3}
-                autoplay={true}
-                loop={true}
-                navigation
-                pagination={{clickable: true}}
-                >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-            </Swiper>
-        </>
+            <Reviews />
+        </div>
     )
 }
 

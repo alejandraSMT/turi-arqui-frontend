@@ -1,11 +1,19 @@
-.header {
+.header { 
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     width: 100%;
     height: 100px;
     background-color: white;
     z-index: 10;
     display: flex;
     justify-content: center;
+    background-color: var(--white);
     box-shadow: 0 1px 10px -2px var(--gray);
+    @media (max-width: 1200px) {
+        display: none;
+    }
 }
 
 .header-options {
@@ -19,7 +27,13 @@
     }
 }
 
-.header .logo {
+.header .logo{
+    display: flex;
+    align-self: center;
+}
+.header .logo img{
+    height: 70px;
+    width: auto;
     padding: 1rem;
 }
 
@@ -97,3 +111,66 @@ a {
     display: flex;
     flex-direction: column;
   }
+
+.header-mobile {
+    display: none;
+    @media (max-width: 1200px) {
+        display: flex;
+        position: sticky;
+        background-color: var(--white);
+        top: 0;
+        z-index: 10;
+        justify-content: space-between;
+        padding-inline: 10px;
+        align-items: center;
+        width: 100%;
+        box-shadow: 0 1px 10px -2px var(--gray);
+    }
+}
+
+.header-mobile .logo{
+    display: flex;
+    align-self: center;
+}
+.header-mobile .logo img{
+    height: 70px;
+    width: auto;
+    padding: 1rem;
+}
+
+.header-mobile .header-mobile__side .side-bar {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.header-mobile .header-mobile__side .side-bar img {
+    height: 40px;
+    width: auto;
+}
+
+.header-mobile .header-mobile__side .side-bar .side-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    border-radius: 10px;
+}
+
+.header-mobile .header-mobile__side .side-bar .side-dropdown a {
+    text-decoration: none;
+    padding: 10px;
+    color: var(--font-color);
+}
+
+.header-mobile .header-mobile__side .side-bar .side-dropdown a:hover{
+    background-color: var(--light-gray);
+}
+
+.header-mobile .header-mobile__side .side-bar:hover .side-dropdown {
+    display: flex;
+    flex-direction: column;
+}

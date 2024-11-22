@@ -7,6 +7,9 @@
     border-radius: 25px;
     padding-inline: 10px;
     border: solid 1px var(--light-gray);
+    @media (max-width: 1200px){
+        width: 80%;
+    }
 }
 
 .searchbar .search-icon {
