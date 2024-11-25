@@ -110,4 +110,32 @@ textarea {
   padding-block: 10px;
   font-size: 15px;
   outline: none;
+  min-height: 150px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+select {
+  border-radius: 20px;
+  border: solid 1px var(--light-gray);
+  padding-inline: 15px;
+  padding-block: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-element {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-element label{
+  font-size: 20px;
+  font-weight: 600
+}
+
+.input-element label span{
+  color: var(--light-gray);
+}
+

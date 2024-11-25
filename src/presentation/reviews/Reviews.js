@@ -5,6 +5,7 @@ import { fetchReviews } from "../../services/reviewService";
 
 import "../../style/review/Reviews.css";
 import ReviewForm from "./components/ReviewForm";
+import ReportModal from "./components/report/ReportModal";
 let titles = require("../../assets/json/titles.json");
 
 function Reviews() {
@@ -12,6 +13,8 @@ function Reviews() {
     const [openSendReview, setOpenSendReview] = useState(false);
     const [reviews, setReviews] = useState([]);
     const placeId = 2;
+    const [openModal, setOpenModal] = useState(false);
+    const [review, setReview] = useState('');
    
     
     async function fetchData() {
@@ -53,13 +56,21 @@ function Reviews() {
             reviewsSection.push(
                 <ReviewItem
                     item={element}
+                    onReportClick={onReportClick}
                 />
             )
         });
     }
 
+    function onReportClick(id) {
+        setOpenModal(true);
+        setReview(id);
+    }
+
     return (
         <>
+        
+            {openModal && <ReportModal reviewId={review} setOpenModal={setOpenModal} />}
             <div className="reviews-container">
                 <div className="top">
                     <h2>{titles["review-title"]}</h2>
