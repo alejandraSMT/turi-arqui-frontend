@@ -72,6 +72,10 @@ function ReviewItem(props) {
         }
     }
 
+    function handleClick() {
+        props.onReportClick(props.item._id)
+    }
+
     let commentsList = [];
     if(comments.length > 0){
         Array.from(comments).forEach((element) => {
@@ -101,7 +105,7 @@ function ReviewItem(props) {
                             <p className="publish-date">Publicado el {moment(props.item.date).format('DD/MM/YYYY')}</p>
                         </div>
                         <div className="review-user__report">
-                            <img src={reportIcon.default}/>
+                            <img src={reportIcon.default} onClick={handleClick}/>
                         </div>
                     </div>
                     <ReactStars

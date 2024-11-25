@@ -1,3 +1,9 @@
 .comment-item{
     padding: 1rem;
 }
+
+.comment-item .comment-content p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
