@@ -5,57 +5,57 @@
     gap: 40px;
     justify-content: center;
     padding: 20px;
-  }
-  
-  /* Sección izquierda */
-  .blog-left {
+}
+
+/* Sección izquierda */
+.blog-left {
     width: 30%;
     margin-left: 60px;
-  }
-  
-  .blog-table {
+}
+
+.blog-table {
     width: 100%;
     margin-bottom: 20px;
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-  }
-  
-  .blog-table th {
+}
+
+.blog-table th {
     background-color: #28a745;
     color: white;
     padding: 10px;
-  }
-  
-  .blog-table td {
+}
+
+.blog-table td {
     padding: 10px;
-  }
-  
-  .blog-table tr:nth-child(even) {
+}
+
+.blog-table tr:nth-child(even) {
     background-color: #f4f4f4;
-  }
-  
-  .blog-table tr:nth-child(odd) {
+}
+
+.blog-table tr:nth-child(odd) {
     background-color: white;
-  }
-  
-  .blog-select {
+}
+
+.blog-select {
     width: 100%;
     padding: 8px;
     border-radius: 10px;
     border: 1px solid #ccc;
     outline: none;
-  }
-  
-  /* Sección derecha */
-  .blog-right {
+}
+
+/* Sección derecha */
+.blog-right {
     width: 60%;
     overflow-y: auto;
     max-height: 80vh;
-  }
-  
-  .blog-add-button {
+}
+
+.blog-add-button {
     padding: 10px 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -65,9 +65,9 @@
     cursor: pointer;
     display: block;
     margin: 0 auto;
-  }
-  
-  .blog-comment {
+}
+
+.blog-comment {
     display: flex;
     flex-direction: row;
     margin-bottom: 15px;
@@ -78,36 +78,45 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     width: 50%;
     margin: 10px auto;
-  }
-  
-  .blog-comment-content {
+}
+
+.blog-comment-content {
     flex: 1;
     margin-right: 10px;
-  }
-  
-  .blog-comment-header {
+}
+
+.blog-comment-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+    font-size: 14px;
   }
   
   .blog-comment-name {
     color: #28a745;
+    font-size: 17px;  /* Aumentar el tamaño de la fuente del nombre */
+    font-weight: bold; /* Poner el nombre en negrita */
+  }
+  
+  .blog-comment-place {
+    color: black;
+    font-size: 13px;  /* Aumentar el tamaño del lugar */
+    font-weight: bold; /* Poner el nombre del lugar en negrita */
   }
   
   .blog-comment-hashtag {
-    color: #28a745;
-    font-weight: bold;
+    color: black;
+    font-size: 13px;  /* Aumentar el tamaño del hashtag */
+    font-weight: bold; /* Poner el hashtag en negrita */
   }
-  
-  .blog-comment-photo {
+.blog-comment-photo {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-  }
-  
-  /* Popup */
-  .blog-popup {
+}
+
+/* Popup */
+.blog-popup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -117,33 +126,43 @@
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-  }
-  
-  .blog-popup textarea,
-  .blog-popup input {
+}
+
+.blog-popup textarea,
+.blog-popup input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
     outline: none;
-  }
-  
-  .blog-popup-button {
+}
+
+.blog-popup-button {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-  }
-  
-  .blog-popup-button.publish {
+}
+
+.blog-popup-button.publish {
     background-color: #007bff;
     color: white;
     margin-right: 10px;
-  }
-  
-  .blog-popup-button.cancel {
+}
+
+.blog-popup-button.cancel {
     background-color: #dc3545;
     color: white;
+}
+
+.success-message {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
   }
   
