@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import LoginScreen from './presentation/login/LoginScreen';
+import LoginScreenDefault from './presentation/login-default/LoginScreenDef';
+import LoginScreenBusiness from './presentation/login-business/LoginScreenBusiness';
 import SignUpScreen from './presentation/signup/SignUpScreen';
 import DetailScreen from './presentation/detail/DetailScreen';
 import HomeScreen from './presentation/home/HomeScreen';

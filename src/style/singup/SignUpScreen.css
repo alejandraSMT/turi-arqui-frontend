@@ -1,37 +1,185 @@
-.signup{
-    height: 100vh;
+.signup {
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem; /* Asegura márgenes en pantallas pequeñas */
+    box-sizing: border-box;
 }
 
-.signup .container{
-    box-shadow: 1px 1px 6px 1px lightgray;
-    width: 70%;
-    height: 80%;
+.signup .container {
+    width: 100%; /* Ocupa el 95% del ancho de la pantalla */
+    max-width: 1280px; /* Limita el ancho máximo en pantallas grandes */
+    height: 85%; /* Ocupa el 95% de la altura de la pantalla */
+    max-height: 95%; /* Evita que el contenedor exceda la pantalla */
     border-radius: 20px;
     display: flex;
+    flex-direction: row;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    background-color: white;
+    box-shadow: 1px 1px 6px 1px lightgray;
+    box-sizing: border-box;
+}
+
+.signup .container .left {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.signup .container .form-container {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 500px; /* Limita el ancho máximo del formulario */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espacio entre filas */
+    flex-shrink: 1; /* Permite que el formulario se reduzca si es necesario */
+    box-sizing: border-box;
+}
+
+.signup .container .form-container .form-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; /* Espacio entre los campos en la misma fila */
+    flex-wrap: nowrap; /* Evita que los campos se apilen automáticamente */
+}
+
+.signup .container .form-container .form-control {
+    flex: 1;
+    min-width: 48%; /* Asegura que cada campo ocupe al menos el 48% */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.signup .container .left .form-container .form-control input,
+.signup .container .form-container .form-control select {
+    width: 100%; /* Asegura que los inputs y selects ocupen todo el espacio disponible */
+    height: 46px; /* Altura consistente para todos */
+    border-radius: 20px !important;
+    padding: 1rem;
+    border: 1px solid var(--input-border-color);
+    box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+}
+
+.signup .container .left .form-container .form-control select {
+    appearance: menulist;
+    background-color: white; /* Igual al fondo de los inputs */
+    padding: 0.8rem; /* Ajusta el padding para evitar el desplazamiento */
+    height: 46px; /* Altura uniforme con los inputs */
+    border-radius: 20px !important; /* Igual que los otros inputs */
+    border: 1px solid var(--input-border-color);
+    font-size: 1rem; /* Asegura que el texto sea del mismo tamaño */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+    overflow: hidden; /* Evita contenido extraño fuera de los bordes */
+}
+
+.signup .container .right {
+    flex: 1;
+    background-color: var(--green-lighter);
+    background-image: url('../../assets/images/miraflores_login.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0px 20px 20px 0px;
+    flex-shrink: 1; /* Permite que la imagen también se reduzca */
+}
+
+.signup .container .left .register-button {
+    margin-top: 1rem; /* Añade espacio entre el botón y los campos superiores */
     align-self: center;
 }
 
-.signup .container .form-grid{
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
+.signup .container .left .form-container .form-control input:focus{
+    outline: none;
+    border-color: var(--input-border-active-color);
 }
 
-.signup .container .form-grid .form-group{
-    display: flex;
-    flex-direction: column;
+.signup .container .left .form-container .form-control select:focus{
+    outline: none;
+    border-color: var(--input-border-active-color);
 }
 
-.signup .container .form-grid .form-group input{
-    border: 1px solid var(--input-border-color);
-    height: 10px;
-    padding: 1rem;
-    border-radius: 20px;
+.signup .container .left img {
+    margin-bottom: 1rem; /* Añade espacio entre el botón y los campos superiores */
+}
+
+.signup .container .left .options .has-account {
+    margin-right: 5px;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+    .signup .container {
+        flex-direction: column; /* Diseño vertical */
+        height: 100%; /* Ocupa todo el viewport */
+    }
+
+    .signup .container .left,
+    .signup .container .right {
+        width: 100%;
+        height: 50%; /* Divide la altura entre el formulario y la imagen */
+    }
+
+    .signup .container .right {
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    .signup .container .left .register-button {
+        margin-top: 2rem; /* Añade espacio entre el botón y los campos superiores */
+    }
+}
+
+@media (max-width: 768px) {
+    .signup .container {
+        flex-direction: column; /* Mantiene diseño vertical */
+    }
+
+    .signup .container .form-container {
+        width: 100%; /* Ajusta al ancho disponible */
+    }
+
+    .signup .container .form-row {
+        flex-direction: column; /* Apila los campos */
+        gap: 0.5rem; /* Reduce el espacio entre filas */
+    }
+
+    .signup .container .right {
+        height: 200px; /* Ajusta la altura de la imagen */
+    }
+}
+
+@media (max-width: 480px) {
+    .signup .container .form-container {
+        gap: 0.5rem; /* Reduce espacio entre filas en móviles pequeños */
+    }
+
+    .signup .container .form-container .form-row {
+        gap: 0.5rem; /* Menor espacio entre campos */
+    }
+
+    .signup .container .right {
+        height: 150px; /* Altura más baja para móviles pequeños */
+    }
+}
+
+
+.form-control.error input,
+.form-control.error select {
+    border-color: red;
+}
+
+.form-control.error label {
+    color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
 }

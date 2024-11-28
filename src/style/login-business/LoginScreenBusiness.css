@@ -1,0 +1,118 @@
+.login-business{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-business .container{
+    box-shadow: 1px 1px 6px 1px lightgray;
+    width: 70%;
+    height: 80%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    align-self: center;
+}
+
+
+.login-business .container .left{
+    width: 50%;
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.login-business .container .left .space-button{
+    width: 100%;
+    padding-block: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-business .container .form-container{
+    width: 90%;
+    height: 100%;
+}
+
+.login-business .container .left .form-container .form-control{
+    width: 100%;
+    display: flex;
+    padding-top: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    gap: 0.5rem;
+}
+
+.login-business .container .left .form-container .form-control input{
+    width: 90%;
+    height: 10px;
+    border-radius: 20px !important;
+    padding: 1rem;
+    border: 1px solid var(--input-border-color);
+}
+
+.login-business .container .left .form-container .form-control input:focus{
+    outline: none;
+    border-color: var(--input-border-active-color);
+}
+
+.login-business .container .right{
+    width: 50%;
+    background-color: var(--green-lighter);
+    background-image: url('../../assets/images/machupicchu_login.jpg');
+    background-repeat: no-repeat;
+    background-position: 60%;
+    background-size: cover;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.login-business .container .options{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-business .container .options span{
+    color: var(--gray);
+}
+
+.login-business .container .options .no-account {
+    margin-right: 5px;
+}
+
+.login-business .container .form-container .form-control .forgot-account {
+    color: var(--gray);
+    font-size: small;
+}
+
+.login-business .container .form-container .form-control .forgot-account:hover{
+    color: green;
+    text-decoration: underline;
+}
+
+.login-business .form-control.error input {
+    border-color: red; /* Borde rojo para el input con error */
+}
+
+.login-business .form-control.error label {
+    color: red; /* Título en rojo si hay un error */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.5rem; /* Espacio entre el input y el mensaje */
+}
+
+.login-error-message {
+    color: red;
+    font-size: 1rem;
+    display: block; /* Mostrar mensaje como bloque debajo del botón */
+    text-align: center;
+}
