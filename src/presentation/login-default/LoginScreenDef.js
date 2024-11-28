@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { loginUser } from '../../services/authService';
 import '../../style/login-default/LoginScreenDef.css';
 let logo_black = require("../../assets/images/logo-turi-black.png");
 
 function LoginScreen() {
+    const navigate = useNavigate();
     const [input, setInput] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(''); // Error de email
@@ -69,6 +71,7 @@ function LoginScreen() {
                 sessionStorage.setItem('jwtToken', data.token);
                 console.log('Inicio de sesión exitoso. Token guardado.');
                 alert('Inicio de sesión exitoso.');
+                navigate("/");
                 // Redirigir o realizar acciones adicionales aquí
             } else {
                 throw new Error('No se recibió un token válido.');

@@ -23,8 +23,8 @@
 }
 
 .blog-table th {
-    background-color: #28a745;
-    color: white;
+    background-color: var(--green);
+    color: var(--white);
     padding: 10px;
 }
 
@@ -33,25 +33,24 @@
 }
 
 .blog-table tr:nth-child(even) {
-    background-color: #f4f4f4;
+    background-color: var(--light-gray);
 }
 
 .blog-table tr:nth-child(odd) {
-    background-color: white;
+    background-color: var(--white);
 }
 
 .blog-select {
     width: 100%;
     padding: 8px;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--gray);
     outline: none;
 }
 
 /* Sección derecha */
 .blog-right {
     width: 50%;
-    overflow-y: auto;
     max-height: 80vh;
     
 }
@@ -73,7 +72,6 @@
   
 .blog-comment {
     display: flex;
-    width: 50%;
     flex-direction: column;  /* Organiza el contenido en columnas */
     margin-bottom: 30px;  
     padding: 20px;
@@ -93,7 +91,7 @@
   .blog-comment-place {
     font-weight: bold;
     font-size: 2.1em;
-    color: #28a745;
+    color: var(--green);
   }
   
   .blog-comment-hashtag {

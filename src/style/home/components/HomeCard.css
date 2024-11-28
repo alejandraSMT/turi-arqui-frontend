@@ -1,0 +1,23 @@
+.home-card {
+    height: 350px;
+    width: 250px;
+}
+
+.home-card .card-photo {
+    width: 100%;
+}
+
+.home-card .card-photo img{
+    width: 100%;
+    object-fit: fill;
+    border-radius: 1rem;
+}
+
+.home-card  .card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-card  .card-content .card-description{
+    color: var(--gray);
+}

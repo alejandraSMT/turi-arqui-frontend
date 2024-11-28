@@ -1,0 +1,41 @@
+.itinerary-detail-container {
+    width: 100%;
+    margin-inline: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.itinerary-detail-container .detail-itinerary-header {
+    border-radius: 1rem;
+    width: 70%;
+    height: 250px;
+    padding: 1rem;
+}
+
+.itinerary-detail-container .detail-itinerary-header h1{
+    color: var(--white);
+}
+.itinerary-detail-container .detail-itinerary-header .detail-trip-days{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+}
+
+.itinerary-detail-container .detail-itinerary-header .detail-trip-days img{
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+}
+
+.itinerary-detail-container .itinerary-detail-list {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 2rem;
+    align-items: baseline;
+}

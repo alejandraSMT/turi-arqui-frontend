@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../shared/header/Header";
 import "../../style/blog/Blog.css";
+import { createComment, fetchComments } from "../../services/blogService";
 
 function BlogScreen() {
   const [comments, setComments] = useState([]);
@@ -14,21 +15,17 @@ function BlogScreen() {
   const [showMessage, setShowMessage] = useState(false); // Estado para mostrar el mensaje
 
   // Fetch para obtener comentarios
-  const fetchComments = async () => {
+  const fetchBlogComments = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:8000/blog-service/api/getComentarios`
-      );
-      if (!response.ok) throw new Error("Error al obtener comentarios");
-      const data = await response.json();
-      setComments(data);
+      const response = await fetchComments();
+      setComments(response);
     } catch (error) {
       console.error("Error al obtener comentarios:", error);
     }
   };
 
   useEffect(() => {
-    fetchComments();
+    fetchBlogComments();
   }, []);
 
   // Handler para agregar un nuevo comentario
@@ -43,18 +40,9 @@ function BlogScreen() {
       };
 
       try {
-        const response = await fetch(
-          "http://localhost:8000/blog-service/api/createComentario",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newCommentData),
-          }
-        );
+        const response = await createComment(newCommentData);
 
-        if (!response.ok) throw new Error("Error al agregar comentario");
+        if (response.status != 201) throw new Error("Error al agregar comentario");
 
         setNewUser("");   // Limpia los campos después de agregar el comentario
         setNewPlace("");
@@ -64,8 +52,8 @@ function BlogScreen() {
         setShowPopup(false); // Cierra el popup
 
         // Volver a cargar los comentarios
-        fetchComments();
-
+        window.location.reload();
+        
         // Mostrar mensaje de éxito
         setMessage("Comentario creado exitosamente!");
         setShowMessage(true);
@@ -94,7 +82,7 @@ function BlogScreen() {
               </tr>
             </thead>
             <tbody>
-              {["Lima", "Peru", "MisViajes", "Larcomar", "Chincha"].map(
+              {["#Lima", "#Peru", "#MisViajes", "#Larcomar", "#Chincha"].map(
                 (hashtag, index) => (
                   <tr key={index}>
                     <td>{hashtag}</td>
@@ -122,7 +110,7 @@ function BlogScreen() {
         <div className="blog-right">
           {/* Botón para agregar comentario */}
           <button
-            className="blog-add-button"
+            className="blog-add-button primary-button"
             onClick={() => setShowPopup(true)}
           >
             Agregar Comentario
@@ -189,13 +177,13 @@ function BlogScreen() {
             onChange={(e) => setNewComment(e.target.value)}
           ></textarea>
           <button
-            className="blog-popup-button publish"
+            className="blog-popup-button primary-button"
             onClick={handleAddComment}
           >
             Publicar
           </button>
           <button
-            className="blog-popup-button cancel"
+            className="blog-popup-button secondary-button"
             onClick={() => setShowPopup(false)}
           >
             Cancelar
