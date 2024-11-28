@@ -36,12 +36,10 @@ function LoginScreen() {
         }
     };
 
-    // Manejar el envío del formulario
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoginError(''); // Limpiar error previo del backend
+        setLoginError('');
 
-        // Validar campos
         let hasError = false;
 
         if (!input.trim()) {
@@ -56,23 +54,20 @@ function LoginScreen() {
 
         if (hasError) return;
 
-        // Preparar datos para enviar
         const credentials = {
             email: input,
             password: password
         };
 
         try {
-            setIsSubmitting(true); // Indicador de carga
-            const data = await loginUser(credentials); // Llama al servicio de autenticación
+            setIsSubmitting(true);
+            const data = await loginUser(credentials);
 
-            // Guarda el JWT en sessionStorage
             if (data && data.token) {
                 sessionStorage.setItem('jwtToken', data.token);
                 console.log('Inicio de sesión exitoso. Token guardado.');
                 alert('Inicio de sesión exitoso.');
                 navigate("/");
-                // Redirigir o realizar acciones adicionales aquí
             } else {
                 throw new Error('No se recibió un token válido.');
             }
@@ -80,7 +75,7 @@ function LoginScreen() {
             console.error('Error durante el inicio de sesión:', error.message);
             setLoginError(error.message || 'Hubo un problema al iniciar sesión.');
         } finally {
-            setIsSubmitting(false); // Termina el indicador de carga
+            setIsSubmitting(false);
         }
     };
 

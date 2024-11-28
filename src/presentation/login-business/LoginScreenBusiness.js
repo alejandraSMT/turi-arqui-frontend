@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { loginUser } from '../../services/authService';
+import { useNavigate } from "react-router-dom";
 import '../../style/login-business/LoginScreenBusiness.css';
 let logo_business = require("../../assets/images/logo-turi-business.png")
 
 function LoginScreen() {
+    const navigate = useNavigate();
     const [input, setInput] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(''); // Error de email
@@ -36,7 +38,7 @@ function LoginScreen() {
 
     // Manejar el envío del formulario
     const handleSubmit = async (e) => {
-        e.preventbusiness();
+        e.preventDefault();
         setLoginError(''); // Limpiar error previo del backend
 
         // Validar campos
@@ -69,6 +71,7 @@ function LoginScreen() {
                 sessionStorage.setItem('jwtToken', data.token);
                 console.log('Inicio de sesión exitoso. Token guardado.');
                 alert('Inicio de sesión exitoso.');
+                navigate("/business-home");
                 // Redirigir o realizar acciones adicionales aquí
             } else {
                 throw new Error('No se recibió un token válido.');

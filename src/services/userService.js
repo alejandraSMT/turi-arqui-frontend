@@ -11,3 +11,13 @@ export const registerUser = async (userData) => {
         throw error; // Lanza el error para manejarlo en la llamada
     }
 };
+
+export const validateRole = async () => {
+    try{
+        const response = await apiService.get(`${userServiceEndpoint}`);
+        return response.data;
+    }catch(error) {
+        console.error(error);
+        throw error;
+    }
+}

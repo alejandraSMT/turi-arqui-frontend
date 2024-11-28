@@ -11,3 +11,13 @@ export const getTypeOfPlace= async (type) => {
         throw error;
     }
 }
+
+export const placesByName = async (name) => {
+    try{
+        const response = await apiService.get(`${mainService}/searchPlace?name=${name}`);
+        return response
+    }catch(error){
+        console.error(error);
+        throw error;
+    }
+}
