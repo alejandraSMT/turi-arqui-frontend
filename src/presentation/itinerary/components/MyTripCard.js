@@ -1,8 +1,9 @@
 import React from "react";
 import "../../../style/itinerary/components/MyTripCard.css";
 let calendar = require("../../../assets/icons/itinerary-icon.svg")
+let people = require("../../../assets/icons/persons.svg")
 
-function MyTripCard() {
+function MyTripCard(props) {
     return(
         <>
             <div className="trip-card">
@@ -11,11 +12,15 @@ function MyTripCard() {
                 </div>
                 <div className="trip-right">
                     <h1>
-                        Viaje 1
+                        {props.item.name}
                     </h1>
                     <div className="trip-days">
                         <img src={calendar.default} />
-                        Sep, 9 → Sep 15, 2024 
+                        Duración: {props.item.duration_days}
+                    </div>
+                    <div className="trip-days">
+                        <img src={people.default} />
+                        Duración: {props.item.num_people}
                     </div>
                 </div>
             </div>
