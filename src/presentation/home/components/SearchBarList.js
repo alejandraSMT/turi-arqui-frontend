@@ -1,34 +1,32 @@
 import React from "react";
-import "../../../style/shared/searchbar/SearchBarList.css"
+import "../../../style/shared/searchbar/SearchBarList.css";
 
 function SearchBarList(props) {
-
     const filteredData = props.searchValues.filter((el) => {
-        if (props.input === '') {
-            return el;
-        }
-        else{
-            return el.toLocaleLowerCase().includes(props.input);
-        }
+        if (!el || typeof el.name !== "string") return false;
 
+        if (props.input === '') {
+            return true;
+        } else {
+            return el.name.toLocaleLowerCase().includes(props.input.toLocaleLowerCase());
+        }
     });
 
     let list;
-    if(props.input !== '' && filteredData.length > 0){
-        list = <div className="search-list">
-            <ul>
+    if (props.input !== '' && filteredData.length > 0) {
+        list = (
+            <div className="search-list">
+                <ul>
                     {filteredData.map((item) => (
-                        <li key={item}>{item}</li>
+                        // Usar el campo "id" como clave única
+                        <li key={item.id}>{item.name}</li>
                     ))}
                 </ul>
-        </div>
+            </div>
+        );
     }
 
-    return (
-        <>
-            {list}
-        </>
-    )
+    return <>{list}</>;
 }
 
 export default SearchBarList;

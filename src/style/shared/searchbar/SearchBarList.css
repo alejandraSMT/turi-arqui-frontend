@@ -1,13 +1,36 @@
-.searchbar .search-list {
-    position: absolute;
-    background-color: var(--white);
+.searchbar {
     width: 40%;
-    top: 28%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 25px;
+    padding-inline: 10px;
+    border: solid 1px var(--light-gray);
+
+    @media (max-width: 1200px) {
+        width: 80%;
+    }
+}
+
+.searchbar-container {
+    position: relative; 
+    width: 100%;
+}
+
+.searchbar .search-list {
+    position: fixed; 
+    background-color: var(--white);
+    width: 40%; 
+    top: 200px;
+    left: 50%; 
+    transform: translateX(-50%);
     border: solid 1px var(--light-gray);
     border-radius: 10px;
-    @media (max-width: 1200px){
-        width: 80%;
-        top: 24%;
+    z-index: 500;
+
+    @media (max-width: 1200px) {
+        width: 80%; 
     }
 }
 
@@ -17,12 +40,11 @@
     padding: 0;
 }
 
-.searchbar .search-list ul li{
-    list-style-type: none;
+.searchbar .search-list ul li {
     padding: 10px;
     transition: transform 250ms;
 }
 
-.searchbar .search-list ul li:hover{
+.searchbar .search-list ul li:hover {
     background-color: var(--light-gray);
 }

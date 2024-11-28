@@ -35,7 +35,7 @@ const ReportesIngresos = () => {
         );
     });
 
-    // Agrupar reportes por mes y año
+    // Agrupar reportes por mes y aï¿½o
     const reportesPorMes = reportesFiltrados.reduce((acc, reporte) => {
         const mesAnio = new Date(reporte.fecha).toLocaleString('default', { month: 'long', year: 'numeric' });
         if (!acc[mesAnio]) {
@@ -48,19 +48,19 @@ const ReportesIngresos = () => {
 
     const mesesOrdenados = Object.keys(reportesPorMes).sort((a, b) => new Date(a) - new Date(b)); // Ordenar los meses
 
-    // Función para abrir el modal con los detalles del mes seleccionado
+    // Funciï¿½n para abrir el modal con los detalles del mes seleccionado
     const verDetalles = (mesAnio) => {
         setMesSeleccionado(mesAnio);
         setModalVisible(true); // Mostrar el modal
     };
 
-    // Función para cerrar el modal
+    // Funciï¿½n para cerrar el modal
     const cerrarModal = () => {
         setModalVisible(false);
         setMesSeleccionado(null); // Limpiar la seleccion al cerrar el modal
     };
 
-    // Función para generar y descargar el PDF
+    // Funciï¿½n para generar y descargar el PDF
     const descargarPDF = () => {
         const doc = new jsPDF();
 
@@ -90,14 +90,7 @@ const ReportesIngresos = () => {
         <div className="reportes-ingresos-wrapper2">
             <Header />
             <div className="container2 my-42">
-                <div className="search-container2 mb-42">
-                    <SearchBar
-                        inputHandler={inputHandler}
-                        input={inputText}
-                        searchValues={reportes.map((reporte) => reporte.organizacion)} // Proporcionamos las organizaciones para el autocompletado
-                    />
-                </div>
-
+                <h1>Reporte de ventas</h1>
                 <div className="reportes-list">
                     {loading ? (
                         <p>Cargando reportes...</p>
@@ -164,7 +157,7 @@ const ReportesIngresos = () => {
                             </tbody>
                         </table>
 
-                        {/* Botón para descargar el PDF */}
+                        {/* Botï¿½n para descargar el PDF */}
                         <button className="btn2-pdf" onClick={descargarPDF}>Descargar PDF</button>
                     </div>
                 </div>

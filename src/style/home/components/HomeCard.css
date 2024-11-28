@@ -1,6 +1,7 @@
 .home-card {
-    height: 350px;
+    height: auto;
     width: 250px;
+    cursor: pointer;
 }
 
 .home-card .card-photo {

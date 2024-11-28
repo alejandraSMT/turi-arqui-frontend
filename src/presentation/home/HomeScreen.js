@@ -12,38 +12,50 @@ import 'swiper/css/pagination';
 import Reviews from "../reviews/Reviews";
 import HomeCard from "./components/HomeCard";
 import HomeCarrousel from "./components/HomeCarrousel";
-import { getTypeOfPlace } from "../../services/homeService";
+import { getTypeOfPlace, placesByName } from "../../services/homeService";
 
 function HomeScreen() {
 
-    let searchValues = ['Wonwoo', 'Mingyu', 'Coups'];
+    let [searchValues, setSearchValues] = useState([]);
 
     const [inputText, setInputText] = useState("");
-    let inputHandler = (e) => {
-        var lowerCase = e.target.value.toLowerCase();
-        setInputText(lowerCase);
-    };
-
     let types = [1,2,3];
+    let timeoutId = null;
     const [restaurants, setRestaurants] = useState([]);
     const [locals, setLocals] = useState([]);
     const [activities, setActivities] = useState([]);
 
-    /*
-    async function fetchData() {
-        try {
-          const result = await fetchReviews(placeId);
-          setReviews(result);
-        } catch (error) {
-          console.error('Error fetching data:', error);
+    
+    const inputHandler = (e) => {
+        const lowerCase = e.target.value.toLowerCase();
+        setInputText(lowerCase);
+
+        if (timeoutId) {
+            clearTimeout(timeoutId);
         }
-      }
-  
-  // useEffect block
-    useEffect(() => {
-         fetchData();
-    }, []);
-    */
+
+        timeoutId = setTimeout(() => {
+            search(lowerCase);
+        }, 500);
+    };
+
+    const search = async (text) => {
+        try {
+            if (text) {
+                const result = await placesByName(text);
+                if (result.status === 200) {
+                    setSearchValues(result.data);
+                } else {
+                    setSearchValues([]);
+                }
+            } else {
+                setSearchValues([]);
+            }
+        } catch (error) {
+            console.error(error);
+            setSearchValues([]);
+        }
+    };
 
     async function getPlaces() {
         types.forEach(async (e) => {
@@ -58,11 +70,6 @@ function HomeScreen() {
 
         });
     }
-
-    console.log("RESTAURANTES: ", restaurants);
-    console.log("LOCALS: ", locals);
-    console.log("ACTIVIDADES: ", activities);
-
     useEffect(() => {
         getPlaces();
     }, [])

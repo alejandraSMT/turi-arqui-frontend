@@ -6,20 +6,22 @@ import { fetchReviews } from "../../services/reviewService";
 import "../../style/review/Reviews.css";
 import ReviewForm from "./components/ReviewForm";
 import ReportModal from "./components/report/ReportModal";
+import { useParams } from "react-router-dom";
+import Header from "../../shared/header/Header";
 let titles = require("../../assets/json/titles.json");
 
 function Reviews() {
+    const { id } = useParams();
 
     const [openSendReview, setOpenSendReview] = useState(false);
     const [reviews, setReviews] = useState([]);
-    const placeId = 2;
     const [openModal, setOpenModal] = useState(false);
     const [review, setReview] = useState('');
    
     
     async function fetchData() {
         try {
-          const result = await fetchReviews(placeId);
+          const result = await fetchReviews(id);
           setReviews(result);
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -42,7 +44,7 @@ function Reviews() {
 
     let form;
     if(openSendReview){
-        form = <ReviewForm closeReviewForm={closeReviewForm} placeId={placeId}/>
+        form = <ReviewForm closeReviewForm={closeReviewForm} placeId={id}/>
     }
 
     let showButton;
@@ -69,7 +71,7 @@ function Reviews() {
 
     return (
         <>
-        
+            <Header />
             {openModal && <ReportModal reviewId={review} setOpenModal={setOpenModal} />}
             <div className="reviews-container">
                 <div className="top">

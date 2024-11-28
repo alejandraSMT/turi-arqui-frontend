@@ -10,6 +10,9 @@ import LoginScreen from './presentation/login-default/LoginScreenDef';
 import BlogScreen from './presentation/blog/BlogScreen';
 import ItineraryScreen from './presentation/itinerary/ItineraryScreen';
 import DetailItinerary from './presentation/detail-itinerary/DetailItinerary';
+import RecommendationsScreen from './presentation/recommendations/Recommendations';
+import ReportesIngresos from './presentation/business/ReportesIngresosScreen';
+import Reviews from './presentation/reviews/Reviews';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
         <Route path='/blog' Component={BlogScreen} />
         <Route path='/itinerary' Component={ItineraryScreen} />
         <Route path='/createItinerary' Component={DetailItinerary} />
+        <Route path='/recommendations' Component={RecommendationsScreen} />
+        <Route path='/business-home' Component={ReportesIngresos} />
+        <Route path='/detail/:id' element={<Reviews />} />
       </Routes>
     </BrowserRouter>
   );
