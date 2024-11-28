@@ -7,7 +7,8 @@ function BlogScreen() {
   const [newUser, setNewUser] = useState(""); // Nuevo estado para el nombre del usuario
   const [newPlace, setNewPlace] = useState(""); // Nuevo estado para el nombre del restaurante
   const [newHashtag, setNewHashtag] = useState(""); // Nuevo estado para el hashtag
-  const [newComment, setNewComment] = useState(""); // Comentario
+  const [newComment, setNewComment] = useState("");
+  const [newPhoto, setNewPhoto] = useState(""); // Comentario
   const [showPopup, setShowPopup] = useState(false); // Estado para mostrar el popup
   const [message, setMessage] = useState(""); // Estado para el mensaje de éxito
   const [showMessage, setShowMessage] = useState(false); // Estado para mostrar el mensaje
@@ -37,7 +38,8 @@ function BlogScreen() {
         NombreUsuario: newUser,       // Se usa el nombre ingresado por el usuario
         Hashtag: "#"+newHashtag, // Se usa el hashtag ingresado
         Comentario: newComment, // El comentario
-        NombreLugar: newPlace,     // Se usa el nombre del lugar ingresado
+        NombreLugar: newPlace, 
+        FotoLugar: newPhoto    // Se usa el nombre del lugar ingresado
       };
 
       try {
@@ -58,6 +60,7 @@ function BlogScreen() {
         setNewPlace("");
         setNewHashtag("");
         setNewComment("");
+        setNewPhoto("");
         setShowPopup(false); // Cierra el popup
 
         // Volver a cargar los comentarios
@@ -108,6 +111,11 @@ function BlogScreen() {
             <option>Lugar turístico</option>
             <option>Comida criolla</option>
           </select>
+          <img 
+    src="https://static.vecteezy.com/system/resources/previews/016/314/900/non_2x/comment-icon-free-png.png" 
+    alt="Comment Icon" 
+    className="comment-icon" 
+  />
         </div>
 
         {/* División Derecha */}
@@ -119,20 +127,31 @@ function BlogScreen() {
           >
             Agregar Comentario
           </button>
-
+        <br/>
           {/* Comentarios */}
           {comments.map((comment, index) => (
-            <div key={index} className="blog-comment">
-              <div className="blog-comment-content">
-                <div className="blog-comment-header">
-                  <strong className="blog-comment-name">{comment.NombreUsuario}</strong>
-                  <span className="blog-comment-place">{comment.NombreLugar}</span>
-                  <span className="blog-comment-hashtag">{comment.Hashtag}</span>
-                </div>
-                <p>{comment.Comentario}</p>
-              </div>
-            </div>
-          ))}
+  <div key={index} className="blog-comment">
+    <div className="blog-comment-header">
+      <span className="blog-comment-place">{comment.NombreLugar}</span>
+      <span className="blog-comment-hashtag">{comment.Hashtag}</span>
+    </div>
+    <div className="blog-comment-user">
+      <strong className="blog-comment-name">{comment.NombreUsuario}</strong>
+    </div>
+    <div className="blog-comment-body">
+      <p className="blog-comment-text">{comment.Comentario}</p>
+      <img
+        src={comment.FotoLugar}
+        alt="Comment Photo"
+        className="blog-comment-photo"
+      />
+    </div>
+    
+  </div>
+)
+)}
+
+
         </div>
       </div>
 
@@ -157,6 +176,12 @@ function BlogScreen() {
             placeholder="Hashtag"
             value={newHashtag}
             onChange={(e) => setNewHashtag(e.target.value)}
+          />
+          <input
+            type="photo"
+            placeholder="Photo"
+            value={newPhoto}
+            onChange={(e) => setNewPhoto(e.target.value)}
           />
           <textarea
             placeholder="Escribe tu comentario..."
