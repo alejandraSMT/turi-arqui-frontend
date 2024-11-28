@@ -1,0 +1,225 @@
+/* Contenedor específico para el componente ReportesIngresos */
+.reportes-ingresos-wrapper2 .container2 {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.reportes-ingresos-wrapper2 .my-42 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.reportes-ingresos-wrapper2 .mb-42 {
+    margin-bottom: 1.5rem;
+}
+
+.reportes-ingresos-wrapper2 .table-responsive2 {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.reportes-ingresos-wrapper2 .table2 {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+    .reportes-ingresos-wrapper2 .table2 th,
+    .reportes-ingresos-wrapper2 .table2 td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .reportes-ingresos-wrapper2 .table2 thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+.reportes-ingresos-wrapper2 .table2-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+.reportes-ingresos-wrapper2 .table2-bordered {
+    border: 1px solid #dee2e6;
+}
+
+    .reportes-ingresos-wrapper2 .table2-bordered th,
+    .reportes-ingresos-wrapper2 .table2-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+.reportes-ingresos-wrapper2 .btn2 {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.reportes-ingresos-wrapper2 .btn2-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+    .reportes-ingresos-wrapper2 .btn2-info:hover {
+        color: #fff;
+        background-color: #138496;
+        border-color: #117a8b;
+    }
+
+.reportes-ingresos-wrapper2 .text-center2 {
+    text-align: center;
+}
+
+/* Estilos para el modal */
+.modal2 {
+    display: block; /* Mostrar el modal cuando sea visible */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Hacer scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro */
+}
+
+.modal-content2 {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close2:hover,
+    .close2:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* Ajustes para la tabla del modal */
+.table2 {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table2 th,
+    .table2 td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .table2 th {
+        background-color: #f2f2f2;
+    }
+/* Estilos para el botón de descarga de PDF */
+.btn2-pdf {
+    background-color: #d9534f; /* Color rojo vibrante */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    .btn2-pdf:hover {
+        background-color: #c9302c; /* Rojo más oscuro al pasar el mouse */
+        transform: translateY(-2px); /* Efecto de hover */
+    }
+
+    .btn2-pdf:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.8); /* Efecto al hacer click */
+    }
+
+/* Modal */
+.modal2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content2 {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos de la tabla */
+.table2 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .table2 th, .table2 td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    .table2 th {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table2 tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+/* Estilos para el botón de cerrar modal (X) */
+.close-modal2 {
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-weight: bold;
+}
+
+   
+
+    
