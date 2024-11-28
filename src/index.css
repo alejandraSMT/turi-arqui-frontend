@@ -139,3 +139,16 @@ select {
   color: var(--light-gray);
 }
 
+
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; 
+  width: auto;
+}
