@@ -5,11 +5,12 @@ import LoginScreenBusiness from './presentation/login-business/LoginScreenBusine
 import SignUpScreen from './presentation/signup/SignUpScreen';
 import DetailScreen from './presentation/detail/DetailScreen';
 import HomeScreen from './presentation/home/HomeScreen';
+import RecommendationsScreen from './presentation/recommendations/Recommendations';
 
 function App() {
   return (
     <div>
-      <HomeScreen />
+          <RecommendationsScreen />
     </div>
   );
 }
