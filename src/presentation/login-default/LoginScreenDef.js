@@ -65,6 +65,9 @@ function LoginScreen() {
 
             if (data && data.token) {
                 sessionStorage.setItem('jwtToken', data.token);
+                sessionStorage.setItem('id', data.id);
+                sessionStorage.setItem('role', data.role);
+                sessionStorage.setItem('isPremium', data.isPremium);
                 console.log('Inicio de sesión exitoso. Token guardado.');
                 alert('Inicio de sesión exitoso.');
                 navigate("/");
