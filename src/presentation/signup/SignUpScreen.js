@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { registerUser } from '../../services/userService';
 import '../../style/singup/SignUpScreen.css'
+import { useNavigate } from 'react-router-dom';
 let logo_black = require("../../assets/images/logo-turi-black.png")
 
 function SignUpScreen(){
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         nombres: '',
         apellidos: '',
@@ -114,6 +117,7 @@ function SignUpScreen(){
             const response = await registerUser(payload); // Llama al servicio
             console.log('Respuesta del servidor:', response);
             alert('¡Registro exitoso!');
+            navigate("/login");
         } catch (error) {
             console.error('Error al registrar el usuario:', error);
             alert('Hubo un problema al registrar el usuario.');

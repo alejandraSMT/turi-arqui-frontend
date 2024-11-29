@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from '../../services/authService';
 import '../../style/login-default/LoginScreenDef.css';
 let logo_black = require("../../assets/images/logo-turi-black.png");
@@ -119,7 +119,7 @@ function LoginScreen() {
                     <br />
                     <div className="options">
                         <span className='no-account'>¿Aún no tienes cuenta?</span>
-                        <a className='green'>¡Registrate aquí!</a>
+                        <Link to="/sign-up"><a className='green'>¡Registrate aquí!</a></Link>
                     </div>
                 </div>
                 <div className="right">
