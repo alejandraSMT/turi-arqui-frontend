@@ -13,6 +13,7 @@ import Reviews from "../reviews/Reviews";
 import HomeCard from "./components/HomeCard";
 import HomeCarrousel from "./components/HomeCarrousel";
 import { getTypeOfPlace, placesByName } from "../../services/homeService";
+import RecommendationsScreen from "../recommendations/Recommendations";
 
 function HomeScreen() {
 
@@ -70,6 +71,13 @@ function HomeScreen() {
 
         });
     }
+
+    let recommendations;
+    const isPremium = sessionStorage.getItem('isPremium');
+    if((/true/).test(isPremium)){
+        recommendations = <RecommendationsScreen />
+    }
+
     useEffect(() => {
         getPlaces();
     }, [])
@@ -83,6 +91,7 @@ function HomeScreen() {
                     input={inputText}
                     searchValues={searchValues} />
             </div>
+            {recommendations}
             <HomeCarrousel 
                 type={"Top 5 Restaurantes"}
                 list={restaurants} />

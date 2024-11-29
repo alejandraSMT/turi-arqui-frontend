@@ -5,7 +5,7 @@ import Header from '../../shared/header/Header'; // Importa el Header
 const RecommendationCard = ({ id, name, image, description, details }) => {
     const [expanded, setExpanded] = useState(false);
 
-    // Función para alternar expansión
+    // Funciï¿½n para alternar expansiï¿½n
     const toggleExpand = () => {
         setExpanded(!expanded);
     };
@@ -77,7 +77,6 @@ const RecommendationsScreen = () => {
 
     return (
         <div className="recommendations-screen">
-            <Header />
             <div className="recommendations-header">
                 <h1>Recomendaciones Personalizadas</h1>
                 <h2>Mejora tu experiencia</h2>
